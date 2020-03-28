@@ -1,0 +1,38 @@
+.product {
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    margin-right: 30px;
+}
+
+.product-image img {
+    border: 1px solid lightgray;
+}
+
+span.color {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 20px 10px 0;
+}
+
+span.color.red-blue {
+    background-image: linear-gradient(red, blue);
+}
+
+span.color.green-purple {
+    background-image: linear-gradient(rgb(0, 223, 0), purple);
+}
+
+.amount > span.quantity {
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    border: 1px solid lightgray;
+}
+
+span:first-child {
+    font-weight: bold;
+}

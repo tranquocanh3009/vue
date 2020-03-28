@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="product">
+            <div class="product-image">
+                <img v-bind:src="image">
+            </div>
+            <div class="product-info">
+                <h1>{{ name }}</h1>
+                <p v-if="inStock">In stock</p>
+                <p v-else>Out of stock</p>
+                <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+                <div class="color">
+                    <span v-for="color in colors" v-bind:class="'color '+ color" @mouseover="changColor(color)"></span>
+                </div>
+                <div class="amount">
+                    <span>Quantity: </span>
+                    <button @click="amountChange(type=false)">-</button>
+                    <span class="quantity">{{cartAmount}}</span>
+                    <button @click="amountChange(type=true)">+</button>
+                </div>
+                <div class="price">
+                    <span>Price: </span>
+                    <span class="price">${{ totalPrice }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
